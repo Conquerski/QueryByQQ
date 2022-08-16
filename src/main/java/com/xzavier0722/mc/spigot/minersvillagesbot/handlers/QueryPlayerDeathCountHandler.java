@@ -29,7 +29,7 @@ public class QueryPlayerDeathCountHandler extends AGroupMsgHandler {
             return;
         }
         int deathCount = p.getStatistic(Statistic.DEATHS);
-        group.sendMessage("玩家 " + p.getName() + " 一共死亡了： " + deathCount + " 次！");
+        group.sendMessage("玩家 " + p.getName() + " 一共死亡了 " + deathCount + " 次！");
 
     }
 }
