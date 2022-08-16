@@ -1,7 +1,7 @@
-name: QueryByQQ
-main: com.example.demo.Main
+name: MinersVillagesBot
+main: com.xzavier0722.mc.spigot.minersvillagesbot.MinersVillagesBot
 version: 1.0
-author: DreamVoid
+author: 'ConquerSki, Xzavier0722'
 api-version: 1.16
 depend:
   - MiraiMC
