@@ -37,7 +37,7 @@ public class QueryPlayerUnderpantsHandler extends AGroupMsgHandler {
             group.sendMessage("玩家 " + p.getName() + " 没穿裤衩子！");
             return;
         }
-        group.sendMessage("玩家 " + p.getName() + " 穿的是 " + matchUnderpantsType(item));
+        group.sendMessage("玩家 " + p.getName() + " 穿的是" + " " + matchUnderpantsType(item));
     }
 
     private String matchUnderpantsType(ItemStack item){
@@ -46,43 +46,42 @@ public class QueryPlayerUnderpantsHandler extends AGroupMsgHandler {
             return meta.getDisplayName();
         }
         String itemName = item.getType().toString().toLowerCase().replace("_leggings","");
-        switch (itemName){
-            case "chainmail":
-                return("情趣内裤");
-            case "iron":
-                return("铁内裤");
-            case "golden":
-                return("土豪金内裤");
-            case "diamond":
-                return("蓝白胖次");
-            case "netherite":
-                return("老头内裤");
-            case "neptunium":
-                return("海王毛刺内裤");
-            case "manasteel":
-                return("蓝色内裤");
-            case "elementium":
-                return("骚粉内裤");
-            case "terrasteel":
-                return("骚绿内裤");
-            case "brass":
-                return("CuZn内裤");
-            case "brass_accelerator":
-                return("CuZn动能内裤");
-            case "zinc":
-                return("尿不湿");
-            case "andesite_accelerator":
-                return("安山岩动能内裤");
-            case "copper_armor":
-                return("导电良好大裤衩");
-            case "copper_accelerator":
-                return("铜制动能内裤");
-            case "alfsteel":
-                return("大黄蜂裤衩");
-            case "leather":
-                return("皮革内裤");
-            default:
-                return("咱也不知道他穿的啥裤衩");
+        if (itemName.contains("chainmail")){
+            return("情趣内裤");
+        }else if (itemName.contains("iron")){
+            return("铁内裤");
+        }else if (itemName.contains("golden")){
+            return("土豪金内裤");
+        }else if (itemName.contains("diamond")){
+            return("蓝白胖次");
+        }else if (itemName.contains("netherite")){
+            return("老头内裤");
+        }else if (itemName.contains("neptunium")){
+            return("海王毛刺内裤");
+        }else if (itemName.contains("manasteel")){
+            return("魔力蓝内裤");
+        }else if (itemName.contains("elementium")){
+            return("骚粉内裤");
+        }else if (itemName.contains("terrasteel")){
+            return("骚绿内裤");
+        }else if (itemName.contains("brass_accelerator")){
+            return("铜和锌组成的动能内裤");
+        }else if (itemName.contains("brass")){
+            return("CuZn内裤");
+        }else if (itemName.contains("zinc")){
+            return("尿不湿");
+        }else if (itemName.contains("andesite_accelerator")){
+            return("安山岩动能内裤");
+        }else if (itemName.contains("copper_armor")){
+            return("导电良好大裤衩");
+        }else if (itemName.contains("copper_accelerator")){
+            return("铜制动能内裤");
+        }else if (itemName.contains("alfsteel")){
+            return("大黄蜂裤衩");
+        }else if (itemName.contains("leather")){
+            return("紧身内裤");
+        }else {
+            return("咱也不知道他穿的啥裤衩");
         }
     }
 }
