@@ -25,7 +25,20 @@ public class FindPlayerLocHandler extends AGroupMsgHandler {
             return;
         }
         Location pl = p.getLocation();
-        group.sendMessage("玩家 " + p.getName() + " 当前在 " + pl.getWorld().getName() + " 世界的 " +
+        group.sendMessage("玩家 " + p.getName() + " 当前在 " + getWorldLocalizedName(pl.getWorld().getName()) + " 世界的 " +
                 pl.getBlockX() + "," + pl.getBlockY() + "," + pl.getBlockZ());
+    }
+
+    private String getWorldLocalizedName(String worldName){
+        switch (worldName){
+            case "world":
+                return ("主世界");
+            case "world/DIM-1":
+                return("地狱世界");
+            case "world/DIM1":
+                return("末地世界");
+            default:
+                return("未知的世界");
+        }
     }
 }
