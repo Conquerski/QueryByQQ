@@ -27,7 +27,7 @@ public class Main extends JavaPlugin implements Listener {
     @EventHandler
     public void onGroupMessageReceive(MiraiGroupMessageEvent e){
         if(e.getMessage().equals("在线玩家")) {
-            MiraiBot.getBot(e.getBotID()).getGroup(e.getGroupID()).sendMessage("当前在线玩家：" + getPlayerNameListOnline() +"人");
+            MiraiBot.getBot(e.getBotID()).getGroup(e.getGroupID()).sendMessage( "@" + e.getSenderID() + " 在线玩家："  + getPlayerNameListOnline() +"人");
         }
     }
 
