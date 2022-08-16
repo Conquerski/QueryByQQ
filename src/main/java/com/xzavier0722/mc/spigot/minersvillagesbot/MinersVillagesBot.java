@@ -1,5 +1,6 @@
 package com.xzavier0722.mc.spigot.minersvillagesbot;
 
+import com.xzavier0722.mc.spigot.minersvillagesbot.handlers.FindPlayerLocHandler;
 import com.xzavier0722.mc.spigot.minersvillagesbot.handlers.PlayerListHandler;
 import com.xzavier0722.mc.spigot.minersvillagesbot.listener.QqMsgListener;
 import org.bukkit.Bukkit;
@@ -15,6 +16,7 @@ public class MinersVillagesBot extends JavaPlugin {
 
     private void registerHandlers() {
         new PlayerListHandler();
+        new FindPlayerLocHandler();
     }
 
 }

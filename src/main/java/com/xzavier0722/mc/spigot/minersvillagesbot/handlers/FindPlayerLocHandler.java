@@ -1,0 +1,31 @@
+package com.xzavier0722.mc.spigot.minersvillagesbot.handlers;
+
+import com.xzavier0722.mc.spigot.minersvillagesbot.api.AGroupMsgHandler;
+import com.xzavier0722.mc.spigot.minersvillagesbot.manager.GroupChatManager;
+import me.dreamvoid.miraimc.api.bot.MiraiGroup;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.entity.Player;
+
+public class FindPlayerLocHandler extends AGroupMsgHandler {
+    public FindPlayerLocHandler() {
+        super("查询位置");
+        GroupChatManager.getInstance().registerHandler(this);
+    }
+
+    @Override
+    public void onTrigger(MiraiGroup group, long senderId, String[] args) {
+        if (args.length != 1) {
+            group.sendMessage("用法: " + getKeyword() + " [玩家名]");
+            return;
+        }
+        Player p = Bukkit.getPlayer(args[0]);
+        if (null == p) {
+            group.sendMessage("该玩家不在线！");
+            return;
+        }
+        Location pl = p.getLocation();
+        group.sendMessage("玩家 " + p.getName() + " 当前在 " + pl.getWorld().getName() + " 世界的 " +
+                pl.getBlockX() + "," + pl.getBlockY() + "," + pl.getBlockZ());
+    }
+}
