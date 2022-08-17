@@ -19,8 +19,12 @@ public class PlayerListHandler extends AGroupMsgHandler {
     public void onTrigger(MiraiGroup group, long senderId, String[] args) {
         StringBuilder sb = new StringBuilder();
         Collection<? extends Player> players = Bukkit.getOnlinePlayers();
-        sb.append("当前共有 ").append(players.size()).append(" 人在线\n").append("玩家列表: ").append("\n");
-        players.forEach(p -> sb.append("- ").append(p.getName()).append("\n"));
+        int playersSize = players.size();
+        sb.append("当前共有 ").append(playersSize).append(" 人在线\n");
+        if(playersSize != 0){
+            sb.append("玩家列表: ").append("\n");
+            players.forEach(p -> sb.append("- ").append(p.getName()).append("\n"));
+        }
         group.sendMessage(sb.toString());
     }
 }
